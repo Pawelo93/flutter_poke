@@ -10,8 +10,21 @@ class PokemonListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(pokemon.name),
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Image.network(
+                pokemon.imageUrl,
+                scale: 3,
+              ),
+            ),
+            Text(
+              pokemon.name,
+              style: TextStyle(fontSize: 15),
+            ),
+          ],
+        ),
       ),
     );
   }
