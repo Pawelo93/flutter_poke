@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_poke/di/bloc_dependencies.dart';
+import 'package:flutter_poke/di/injector.dart';
+import 'package:flutter_poke/ui/browser/browser_screen.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  Injector.setup();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -10,7 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: BlocDependencies(
+        child: MyHomePage(),
+      ),
     );
   }
 }
@@ -27,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Pokemons'),
       ),
-      body: Container(),
+      body: BrowserScreen(),
     );
   }
 }
