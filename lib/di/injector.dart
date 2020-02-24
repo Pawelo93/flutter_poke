@@ -23,7 +23,7 @@ abstract class Injector {
 
   @Register.factory(LoadPokemons)
   @Register.factory(PokemonRepository, from: LocalPokemonRepository)
-  @Register.factory(BrowserBloc)
+  @Register.factory(PokemonBrowserBloc)
   @Register.factory(DetailsBloc)
   void _configurePokemonFeatureFactories();
 }

@@ -13,8 +13,8 @@ class BlocDependencies extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<BrowserBloc>(
-          create: (_) => Injector.resolve<BrowserBloc>(),
+        BlocProvider<PokemonBrowserBloc>(
+          create: (_) => Injector.resolve<PokemonBrowserBloc>(),
         ),
         BlocProvider<DetailsBloc>(
           create: (_) => Injector.resolve<DetailsBloc>(),
