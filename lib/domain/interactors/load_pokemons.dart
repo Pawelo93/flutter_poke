@@ -16,6 +16,12 @@ class LoadPokemons {
   }
 
   Pokemon _mapToPokemons(PokemonModel pokemonModel) {
-    return Pokemon(pokemonModel.name, pokemonModel.image);
+    return Pokemon(
+      pokemonModel.name,
+      pokemonModel.image,
+      pokemonModel.maxHP,
+      pokemonModel.resistance,
+      pokemonModel.classification,
+    );
   }
 }

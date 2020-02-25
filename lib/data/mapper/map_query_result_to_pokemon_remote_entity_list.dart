@@ -5,8 +5,9 @@ class MapQueryResultToPokemonRemoteEntityList {
   List<PokemonRemoteEntity> map(QueryResult queryResult) {
     var data = queryResult.data;
     List pokemons = data['pokemons'];
-    return pokemons
+    var a = pokemons
         .map((pokemon) => PokemonRemoteEntity.fromJson(pokemon))
         .toList();
+    return a;
   }
 }

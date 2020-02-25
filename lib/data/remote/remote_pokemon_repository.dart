@@ -12,13 +12,16 @@ class RemotePokemonRepository extends PokemonRepository {
   final MapQueryResultToPokemonRemoteEntityList
       mapQueryResultToPokemonRemoteEntity;
   String _pokemonsQuery = """    
-    query {
-      pokemons(first: 10) {
-        name
-        image
+      query {
+        pokemons(first: 10) {
+          name
+          image
+          maxHP
+          classification
+          resistant
+        }
       }
-    }
-  """;
+    """;
 
   RemotePokemonRepository(
     this.graphQLClient,

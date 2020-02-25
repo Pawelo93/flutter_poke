@@ -1,10 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_poke/ui/details/main_statistics_section.dart';
+import 'package:flutter_poke/ui/details/resistance_section.dart';
+import 'package:flutter_poke/ui/model/pokemon.dart';
+
+class DetailsScreenArguments {
+  final Pokemon pokemon;
+
+  DetailsScreenArguments(this.pokemon);
+}
 
 class DetailsScreen extends StatelessWidget {
   static String routeName = '/details';
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    DetailsScreenArguments args = ModalRoute.of(context).settings.arguments;
+    return Scaffold(
+      body: SafeArea(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 48.0,
+              right: 48.0,
+              top: 24.0,
+            ),
+            child: Column(
+//              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                MainStatisticsSection(
+                  name: args.pokemon.name,
+                  imageUrl: args.pokemon.imageUrl,
+                  maxHP: args.pokemon.maxHP,
+                ),
+                ResistancesSection(resistance: args.pokemon.resistance),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

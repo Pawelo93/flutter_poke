@@ -16,7 +16,6 @@ class _$Injector extends Injector {
             c<MapPokemonRemoteEntityToPokemonModel>(),
             c<MapQueryResultToPokemonRemoteEntityList>()));
     container.registerFactory((c) => PokemonBrowserBloc(c<LoadPokemons>()));
-    container.registerFactory((c) => DetailsBloc());
     container.registerFactory((c) => MapPokemonRemoteEntityToPokemonModel());
     container.registerFactory((c) => MapQueryResultToPokemonRemoteEntityList());
   }

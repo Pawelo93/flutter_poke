@@ -14,9 +14,12 @@ class PokemonListItem extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Image.network(
-                pokemon.imageUrl,
-                scale: 3,
+              child: Hero(
+                tag: pokemon.name,
+                child: Image.network(
+                  pokemon.imageUrl,
+                  scale: 3,
+                ),
               ),
             ),
             Text(

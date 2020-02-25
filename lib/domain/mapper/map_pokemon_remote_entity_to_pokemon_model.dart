@@ -3,7 +3,13 @@ import 'package:flutter_poke/domain/model/PokemonModel.dart';
 
 class MapPokemonRemoteEntityToPokemonModel {
   PokemonModel map(PokemonRemoteEntity entity) {
-    return PokemonModel(entity.name, entity.image);
+    return PokemonModel(
+      entity.name,
+      entity.image,
+      entity.maxHP,
+      entity.resistant,
+      entity.classification,
+    );
   }
 
   List<PokemonModel> mapList(List<PokemonRemoteEntity> entities) {

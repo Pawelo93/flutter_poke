@@ -1,11 +1,9 @@
-import 'package:flutter_poke/data/local/local_pokemon_repository.dart';
 import 'package:flutter_poke/data/mapper/map_query_result_to_pokemon_remote_entity_list.dart';
 import 'package:flutter_poke/data/remote/remote_pokemon_repository.dart';
 import 'package:flutter_poke/data/repositories/pokemon_repository.dart';
 import 'package:flutter_poke/domain/interactors/load_pokemons.dart';
 import 'package:flutter_poke/domain/mapper/map_pokemon_remote_entity_to_pokemon_model.dart';
 import 'package:flutter_poke/ui/browser/bloc/bloc.dart';
-import 'package:flutter_poke/ui/details/bloc/bloc.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:kiwi/kiwi.dart';
 
@@ -34,7 +32,6 @@ abstract class Injector {
   @Register.factory(LoadPokemons)
   @Register.factory(PokemonRepository, from: RemotePokemonRepository)
   @Register.factory(PokemonBrowserBloc)
-  @Register.factory(DetailsBloc)
   @Register.factory(MapPokemonRemoteEntityToPokemonModel)
   @Register.factory(MapQueryResultToPokemonRemoteEntityList)
   void _configurePokemonFeatureFactories();

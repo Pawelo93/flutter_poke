@@ -22,6 +22,10 @@ class PokemonList extends StatelessWidget {
   }
 
   void _openDetailsScreen(BuildContext context, Pokemon pokemon) {
-    Navigator.pushNamed(context, DetailsScreen.routeName);
+    Navigator.pushNamed(
+      context,
+      DetailsScreen.routeName,
+      arguments: DetailsScreenArguments(pokemon),
+    );
   }
 }
