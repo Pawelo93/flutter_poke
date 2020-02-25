@@ -9,7 +9,7 @@ class PokemonBrowserBloc extends Bloc<PokemonBrowserEvent, PokemonBrowserState> 
   final LoadPokemons loadPokemons;
 
   PokemonBrowserBloc(this.loadPokemons) {
-    _loadPokemons();
+    loadPokemonsEvent();
   }
 
   @override
@@ -26,7 +26,7 @@ class PokemonBrowserBloc extends Bloc<PokemonBrowserEvent, PokemonBrowserState> 
     }
   }
 
-  _loadPokemons() {
+  loadPokemonsEvent() {
     add(LoadPokemonsEvent());
   }
 }
