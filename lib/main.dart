@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
+        debugShowCheckedModeBanner: false,
         initialRoute: BrowserScreen.routeName,
         routes: {
           BrowserScreen.routeName: (context) => BrowserScreen(),

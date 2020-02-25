@@ -5,6 +5,8 @@ import 'package:flutter_poke/domain/mapper/map_pokemon_remote_entity_to_pokemon_
 import 'package:flutter_poke/domain/model/PokemonModel.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
+const int QUERY_SIZE = 10;
+
 class RemotePokemonRepository extends PokemonRepository {
   final GraphQLClient graphQLClient;
   final MapPokemonRemoteEntityToPokemonModel
@@ -13,7 +15,7 @@ class RemotePokemonRepository extends PokemonRepository {
       mapQueryResultToPokemonRemoteEntity;
   String _pokemonsQuery = """    
       query {
-        pokemons(first: 10) {
+        pokemons(first: $QUERY_SIZE) {
           name
           image
           maxHP
